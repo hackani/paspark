@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+  <title>Paspark</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- nice selecy -->
+  <link rel="stylesheet" href="css/nice-select.min.css">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+<style>
+  
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .pricing_section .box {
+    animation: fadeInUp 0.9s ease forwards;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing_section .box:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3);
+    border: 1px solid #3b82f6;
+  }
+
+  .pricing_section .box::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -100%;
+    left: -100%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.08), transparent 70%);
+    z-index: 0;
+    transition: all 0.6s ease;
+  }
+
+  .pricing_section .box:hover::before {
+    top: 0;
+    left: 0;
+  }
+
+  .pricing_section .box h4,
+  .pricing_section .box h5,
+  .pricing_section .box p {
+    position: relative;
+    z-index: 2;
+  }
+  .info_form input[type="email"],
+  .info_form input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  .info_form button {
+    padding: 8px 16px;
+    background-color: #1e3a8a;
+    
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .info_form button:hover {
+    background-color: #3b82f6;
+  }
+
+  .social_box a {
+    font-size: 1.3rem;
+    margin: 0 8px;
+    transition: transform 0.3s ease;
+    color: #1e3a8a;
+  }
+
+  .social_box a:hover {
+    transform: scale(1.2);
+    color: #3b82f6;
+  }
+
+  /* 🔹 Smooth animated background with glow */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #192c60, #2b518f, #6a809a);
+  background-size: 300% 300%;
+  animation: moveGradient 7s ease infinite;
+  opacity: 0.12;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 🔹 Optional: Glass effect panels */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.glass-panel:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+}
+
+
+</style>
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="images/slider-bg.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Paspark
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"> About</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="pricing.html">Pricing <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="why.html">Why Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="testimonial.html">Testimonial</a>
+              </li>
+            </ul>
+            <form class="form-inline">
+              <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
+
+  <!-- pricing section -->
+
+  <section class="pricing_section layout_padding">
+    <div class="bg-box">
+      <img src="a.png" alt="">
+    </div>
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Our Pricing
+        </h2>
+      </div>
+      <div class="col-xl-10 px-0 mx-auto">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mx-auto">
+            <div class="box">
+              <h4 class="price text-dark">
+                $10
+              </h4>
+              <h5 class="name">
+                Basic
+              </h5>
+              <p>
+                Consequuntur iure, quam vero quidem minima obcaecati veniam, praesentium impedit quod repudiandae tempora amet deserunt rerum accusamus. Commodi qui, illum ad ipsa porro ipsum nostrum magni minus.
+              </p>
+              
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mx-auto">
+            <div class="box box-center">
+              <h4 class="price text-dark">
+                $30
+              </h4>
+              <h5 class="name">
+                Premium
+              </h5>
+              <p>
+                Consequuntur iure, quam vero quidem minima obcaecati veniam, praesentium impedit quod repudiandae tempora amet deserunt rerum accusamus. Commodi qui, illum ad ipsa porro ipsum nostrum magni minus.
+              </p>
+              
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mx-auto">
+            <div class="box">
+              <h4 class="price text-dark">
+                $20
+              </h4>
+              <h5 class="name">
+                Standard
+              </h5>
+              <p>
+                Consequuntur iure, quam vero quidem minima obcaecati veniam, praesentium impedit quod repudiandae tempora amet deserunt rerum accusamus. Commodi qui, illum ad ipsa porro ipsum nostrum magni minus.
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end pricing section -->
+
+<!-- Info Section -->
+<section class="info_section bg-dark text-white pt-5 pb-4">
+  <div class="container">
+    <div class="info_top">
+      <div class="row">
+
+        <!-- Stay Connected -->
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_form">
+            <h4>Stay Connected</h4>
+
+            <!-- Email Form -->
+            <form id="subscribeForm" class="mb-3">
+              <input type="email" id="emailInput" placeholder="Enter your email" class="form-control mb-2" required>
+              <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+            </form>
+
+            <!-- Social Icons -->
+            <div class="social_box mt-3">
+              <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook text-white fs-5 me-3"></i></a>
+              <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter text-white fs-5 me-3"></i></a>
+              <a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin text-white fs-5 me-3"></i></a>
+              <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram text-white fs-5"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Us -->
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>About Us</h4>
+            <p>Parklopedia is your smart parking solution offering live availability, QR access, and sustainable mobility tools.</p>
+          </div>
+        </div>
+
+        <!-- Online Booking -->
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>Online Booking</h4>
+            <p>Book your spot ahead with live availability, hassle-free payments, and EV filters for maximum convenience.</p>
+          </div>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="col-md-6 col-lg-3 info_col">
+          <h4>Contact Us</h4>
+          <p>Have questions? Reach out to us directly:</p>
+          <div class="contact_nav">
+            <a href="https://www.google.com/maps/place/New+York" target="_blank">
+              <i class="fa fa-map-marker"></i>
+              <span>123 Smart Street, NY</span>
+            </a>
+            <a href="tel:+011234567890">
+              <i class="fa fa-phone"></i>
+              <span>Call: +01 1234567890</span>
+            </a>
+            <a href="mailto:info@parklopedia.com">
+              <i class="fa fa-envelope"></i>
+              <span>Email: info@parklopedia.com</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Popup -->
+  <div class="position-fixed bottom-0 end-0 p-4" style="z-index: 9999;">
+    <div id="subscribeToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          ✅ Subscription successful!
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap Bundle JS (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Toast Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById('subscribeForm');
+    const emailInput = document.getElementById('emailInput');
+    const toastEl = document.getElementById('subscribeToast');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = emailInput.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(email)) {
+        alert("❌ Please enter a valid email address.");
+        return;
+      }
+
+      const toast = new bootstrap.Toast(toastEl);
+      toast.show();
+      emailInput.value = '';
+    });
+  });
+</script>
+
+
+
+
+  <!-- end info_section -->
+  <!-- footer section -->
+  <footer class="footer_section">
+    <!-- Footer wave SVG -->
+<div style="overflow: hidden;">
+  <svg viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#3b82f6" fill-opacity="0.3" d="M0,64L48,80C96,96,192,128,288,138.7C384,149,480,139,576,122.7C672,107,768,85,864,101.3C960,117,1056,171,1152,176C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+  </svg>
+</div>
+
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer>
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- nice select -->
+  <script src="js/jquery.nice-select.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
+
+</body>
+
+</html>
