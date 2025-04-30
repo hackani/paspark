@@ -22,23 +22,7 @@
   }
   
   /* Header styles */
-  header {
-    background-color: #0066cc;
-    color: white;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-  }
+ 
   
   /* Main content */
   main {
@@ -77,7 +61,7 @@
   }
   
   button {
-    background-color: #0066cc;
+    background-color: #ff6f3c;
     color: white;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -85,7 +69,7 @@
   }
   
   button:hover {
-    background-color: #0055aa;
+    background-color: #ff6f3c;
   }
   
   /* Results container */
@@ -169,7 +153,7 @@
   }
   
   .pagination-controls button {
-    background-color: #0066cc;
+    background-color: #ff6f3c;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -179,7 +163,7 @@
   }
   
   .pagination-controls button:hover {
-    background-color: #0055aa;
+    background-color: #ff6f3c;
   }
   
   .pagination-controls button:disabled {

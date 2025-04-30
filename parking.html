@@ -5,14 +5,256 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>US City Parking Finder</title>
   <link rel="stylesheet" href="./css/parking.css">
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- nice selecy -->
+  <link rel="stylesheet" href="css/nice-select.min.css">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <!-- jQuery (only if needed by other scripts) -->
+<script src="js/jquery-3.4.1.min.js"></script>
+
+<!-- Bootstrap 5 Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+  button,
+  .btn {
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+
+  button:hover,
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #3b82f6 !important;
+    color: #fff !important;
+  }
+
+  button::before,
+  .btn::before {
+    content: "";
+    position: absolute;
+    left: -75%;
+    top: 0;
+    width: 150%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 20%, transparent 70%);
+    transform: skewX(-20deg);
+    transition: left 0.4s ease-in-out;
+  }
+
+  button:hover::before,
+  .btn:hover::before {
+    left: 100%;
+  }
+  
+  
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .pricing_section .box {
+    animation: fadeInUp 0.9s ease forwards;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing_section .box:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3);
+    border: 1px solid #3b82f6;
+  }
+
+  .pricing_section .box::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -100%;
+    left: -100%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.08), transparent 70%);
+    z-index: 0;
+    transition: all 0.6s ease;
+  }
+
+  .pricing_section .box:hover::before {
+    top: 0;
+    left: 0;
+  }
+
+  .pricing_section .box h4,
+  .pricing_section .box h5,
+  .pricing_section .box p {
+    position: relative;
+    z-index: 2;
+  }
+
+  .info_form input[type="email"],
+  .info_form input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  .info_form button {
+    padding: 8px 16px;
+    background-color: #1e3a8a;
+    
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .info_form button:hover {
+    background-color: #3b82f6;
+  }
+
+  .social_box a {
+    font-size: 1.3rem;
+    margin: 0 8px;
+    transition: transform 0.3s ease;
+    color: #1e3a8a;
+  }
+
+  .social_box a:hover {
+    transform: scale(1.2);
+    color: #3b82f6;
+  }
+
+  /* 🔹 Smooth animated background with glow */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #192c60, #2b518f, #6a809a);
+  background-size: 300% 300%;
+  animation: moveGradient 7s ease infinite;
+  opacity: 0.12;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 🔹 Optional: Glass effect panels */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.glass-panel:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+}
+
+
+
+</style>
+
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 </head>
 <body>
-  <header>
-    <h1>US City Parking Finder</h1>
-    <p>Find free and public parking lots in major US cities</p>
-  </header>
+   <!-- 🔹 Animated Gradient Background -->
+<div class="animated-bg"></div>
+
+
+<div class="hero_area">
+  <div class="bg-box">
+    <img src="images/slider-bg.jpg" alt="">
+  </div>
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                Paspark
+              </span>
+            </a>
+  
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pricing.html">Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="why.html">Why Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="testimonial.html">Testimonial</a>
+                </li>
+              </ul>
+              <form class="form-inline">
+                
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+              
+              </form>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
 
   <main>
     <div class="search-container">
