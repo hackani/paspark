@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>US City Parking Finder</title>
+  <link rel="stylesheet" href="./css/parking.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+</head>
+<body>
+  <header>
+    <h1>US City Parking Finder</h1>
+    <p>Find free and public parking lots in major US cities</p>
+  </header>
+
+  <main>
+    <div class="search-container">
+      <div class="search-box">
+        <select id="city-select">
+          <option value="">Select a city</option>
+          <!-- <option value="seattle">Seattle, WA</option> -->
+          <option value="newyork">New York, NY</option>
+          <option value="sanfrancisco">San Francisco, CA</option>
+          <option value="dc">Washington, DC</option>
+          <option value="austin">Austin, TX</option>
+        </select>
+        <button id="search-btn">Find Parking</button>
+      </div>
+    </div>
+
+    <div class="results-container">
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+      <div class="parking-list">
+        <h2>Parking Options</h2>
+        <div id="parking-results">
+          <p class="info-text">Select a city to see available parking options</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Data provided by <a href="https://catalog.data.gov/dataset">Data.gov</a> and various city open data portals</p>
+    <p>&copy; 2023 US City Parking Finder</p>
+  </footer>
+
+  <script src="./js/parking.js"></script>
+</body>
+</html> 

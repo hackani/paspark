@@ -1,0 +1,246 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+  }
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #0066cc;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+  
+  /* Main content */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  /* Search container */
+  .search-container {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .search-box {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  select, button {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: none;
+  }
+  
+  select {
+    flex-grow: 1;
+    background-color: white;
+    border-right: 1px solid #eee;
+    cursor: pointer;
+  }
+  
+  button {
+    background-color: #0066cc;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: 600;
+  }
+  
+  button:hover {
+    background-color: #0055aa;
+  }
+  
+  /* Results container */
+  .results-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .results-container {
+      grid-template-columns: 3fr 2fr;
+    }
+  }
+  
+  /* Map container */
+  .map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    background-color: #e9ecef;
+  }
+  
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Parking list */
+  .parking-list {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-height: 500px;
+    overflow-y: auto;
+  }
+  
+  .parking-list h2 {
+    margin-bottom: 1rem;
+    color: #0066cc;
+    font-size: 1.5rem;
+  }
+  
+  /* Parking item styles */
+  .parking-item {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+  }
+  
+  .parking-item:last-child {
+    border-bottom: none;
+  }
+  
+  .parking-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .parking-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .parking-item .details {
+    margin-top: 0.5rem;
+  }
+  
+  /* Pagination controls */
+  .pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pagination-controls button {
+    background-color: #0066cc;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    font-size: 0.9rem;
+  }
+  
+  .pagination-controls button:hover {
+    background-color: #0055aa;
+  }
+  
+  .pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination-controls span {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .info-text {
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  /* Loading indicator */
+  .loading {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .loading::after {
+    content: "...";
+    animation: dots 1.5s steps(4, end) infinite;
+  }
+  
+  @keyframes dots {
+    0%, 20% {
+      content: ".";
+    }
+    40% {
+      content: "..";
+    }
+    60%, 100% {
+      content: "...";
+    }
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  footer a {
+    color: #99ccff;
+  }
+  
+  footer p {
+    margin-bottom: 0.5rem;
+  }
+  
+  footer p:last-child {
+    margin-bottom: 0;
+    opacity: 0.7;
+    font-size: 0.9rem;
+  } 
