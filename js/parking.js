@@ -9,6 +9,132 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Store markers
 let markers = [];
 
+// Custom parking lot names
+const customParkingNames = [
+  "Central City Parking",
+  "Downtown Plaza Parking",
+  "Riverfront Parking Garage",
+  "Heritage Square Parking",
+  "Westside Mall Parking",
+  "City Center Garage",
+  "Eastside Public Parking",
+  "Metro Park & Ride",
+  "Sunset Boulevard Parking",
+  "Convention Center Garage",
+  "Union Station Parking",
+  "Midtown Plaza Parking",
+  "Harbor View Parking",
+  "Civic Center Parking",
+  "Stadium Garage",
+  "Central City Parking",
+"Downtown Plaza Parking",
+"Riverfront Parking Garage",
+"Heritage Square Parking",
+"Westside Mall Parking",
+"Maple Avenue Parking",
+"Northgate Parking Garage",
+"Union Station Parking",
+"Broadway Center Parking",
+"Lakeside Public Parking",
+"Capitol Hill Parking",
+"Market Street Garage",
+"Sunset Boulevard Parking",
+"Liberty Square Parking",
+"Elm Street Parking",
+"Bayview Parking Structure",
+"Old Town Parking Deck",
+"Metro Center Parking",
+"Harborview Parking Garage",
+"Southside Plaza Parking",
+"Highland Avenue Parking",
+"Greenfield Parking Deck",
+"Oakwood Mall Parking",
+"Cityscape Parking Garage",
+"Beacon Hill Parking",
+"Riverbend Parking Facility",
+"Eastgate Parking Center",
+"Willow Creek Parking",
+"Historic District Parking",
+"Crystal Lake Parking Garage",
+"Civic Center Parking",
+"Fairview Parking Plaza",
+"College Town Parking",
+"Jackson Street Garage",
+"Tech Park Parking Deck",
+"Mountain View Parking",
+"Lexington Plaza Parking",
+"Valley Forge Parking",
+"Seaside Parking Center",
+"Midtown Parking Plaza",
+"Forest Hill Parking Garage",
+"Oceanfront Parking Deck",
+"Golden Gate Parking",
+"Washington Square Parking",
+"Redwood City Parking",
+"Jefferson Plaza Parking",
+"Downtown Loop Parking",
+"Skyline Tower Parking",
+"Silver Lake Parking Deck",
+"Centennial Plaza Parking",
+"Grant Park Parking",
+"Brookstone Mall Parking",
+"Riverside Parking Garage",
+"Peachtree Center Parking",
+"Northside Commons Parking",
+"Eastside Village Parking",
+"Southgate Mall Parking",
+"Liberty Tower Parking",
+"Creekside Parking Lot",
+"Rosewood Parking Garage",
+"Franklin Square Parking",
+"Pine Hill Parking Deck",
+"Waterfront Plaza Parking",
+"Vine Street Parking",
+"Newport Center Parking",
+"Magnolia Lane Parking",
+"Main Street Parking Garage",
+"Stonebridge Parking Deck",
+"Garden District Parking",
+"Commerce Plaza Parking",
+"Mill Creek Parking",
+"Longwood Parking Structure",
+"Palm Avenue Parking",
+"Sunrise Boulevard Parking",
+"City Hall Parking Garage",
+"Westbrook Center Parking",
+"The Galleria Parking",
+"Horizon Park Parking",
+"Industrial Way Parking",
+"East River Parking Deck",
+"Heron Bay Parking",
+"Urban Center Parking",
+"The Junction Parking",
+"Canal Street Parking",
+"Metro Plaza Garage",
+"Capitol View Parking",
+"Woodland Park Parking",
+"Riverwalk Parking Deck",
+"Kingsport Parking Garage",
+"Lighthouse Point Parking",
+"Midland Avenue Parking",
+"Parkside Plaza Parking",
+"Stonehill Parking Structure",
+"Lakeview Commons Parking",
+"Columbia Center Parking",
+"Lincoln Square Parking",
+"Harbor District Parking",
+"Summit Ridge Parking",
+"Cascade Plaza Parking",
+"North Bridge Parking",
+"West End Parking Deck",
+
+];
+
+// Function to get a random custom name
+function getCustomParkingName() {
+  return customParkingNames[Math.floor(Math.random() * customParkingNames.length)];
+}
+
 // Pagination variables
 let currentPage = 0;
 let itemsPerPage = 10;
@@ -193,17 +319,20 @@ function mapSeattleData(data, isPaginated) {
   
   data.forEach(lot => {
     if (lot.latitude && lot.longitude) {
+      // Get a name for the parking lot
+      const parkingName = lot.parkingname || getCustomParkingName();
+      
       // Add marker to map
       const marker = L.marker([parseFloat(lot.latitude), parseFloat(lot.longitude)])
         .addTo(map)
-        .bindPopup(`<strong>${lot.parkingname || 'Parking Lot'}</strong><br>${lot.address || ''}`);
+        .bindPopup(`<strong>${parkingName}</strong><br>${lot.address || ''}`);
       
       markers.push(marker);
       
       // Add to list
       parkingHTML += `
         <div class="parking-item">
-          <h3>${lot.parkingname || 'Parking Lot'}</h3>
+          <h3>${parkingName}</h3>
           <p>${lot.address || 'No address provided'}</p>
           <div class="details">
             <p>Type: ${lot.parkingtype || 'Not specified'}</p>
@@ -255,17 +384,20 @@ function mapNYCData(data, isPaginated) {
     }
     
     if (latitude && longitude) {
+      // Get a custom name
+      const parkingName = getCustomParkingName();
+      
       // Add marker to map
       const marker = L.marker([latitude, longitude])
         .addTo(map)
-        .bindPopup(`<strong>Parking Lot</strong><br>${lot.borough || ''}`);
+        .bindPopup(`<strong>${parkingName}</strong><br>${lot.borough || ''}`);
       
       markers.push(marker);
       
       // Add to list
       parkingHTML += `
         <div class="parking-item">
-          <h3>Parking Lot</h3>
+          <h3>${parkingName}</h3>
           <p>Location: ${lot.borough || 'No description provided'}</p>
         </div>
       `;
@@ -290,17 +422,20 @@ function mapSFData(data, isPaginated) {
       const longitude = lot.location.coordinates[0];
       const latitude = lot.location.coordinates[1];
       
+      // Get a name for the parking lot
+      const parkingName = lot.facname || getCustomParkingName();
+      
       // Add marker to map
       const marker = L.marker([latitude, longitude])
         .addTo(map)
-        .bindPopup(`<strong>${lot.facname || 'Parking Lot'}</strong><br>${lot.location_name || ''}`);
+        .bindPopup(`<strong>${parkingName}</strong><br>${lot.location_name || ''}`);
       
       markers.push(marker);
       
       // Add to list
       parkingHTML += `
         <div class="parking-item">
-          <h3>${lot.facname || 'Parking Lot'}</h3>
+          <h3>${parkingName}</h3>
           <p>${lot.location_name || 'No location name provided'}</p>
           <div class="details">
             <p>Type: ${lot.factype || 'Not specified'}</p>
@@ -340,17 +475,20 @@ function mapDCData(data, isPaginated) {
       }
       
       if (longitude && latitude) {
+        // Get a custom name
+        const parkingName = getCustomParkingName();
+        
         // Add marker to map
         const marker = L.marker([latitude, longitude])
           .addTo(map)
-          .bindPopup(`<strong>Parking Lot/Area</strong>`);
+          .bindPopup(`<strong>${parkingName}</strong>`);
         
         markers.push(marker);
         
         // Add to list
         parkingHTML += `
           <div class="parking-item">
-            <h3>Parking Lot/Area</h3>
+            <h3>${parkingName}</h3>
             <p>Type: ${props.OBJECTID || 'No description provided'}</p>
           </div>
         `;
@@ -373,17 +511,20 @@ function mapAustinData(data, isPaginated) {
   
   data.forEach(lot => {
     if (lot.latitude && lot.longitude) {
+      // Get a name for the parking lot
+      const parkingName = lot.name || getCustomParkingName();
+      
       // Add marker to map
       const marker = L.marker([parseFloat(lot.latitude), parseFloat(lot.longitude)])
         .addTo(map)
-        .bindPopup(`<strong>${lot.name || 'Parking Lot'}</strong><br>${lot.address || ''}`);
+        .bindPopup(`<strong>${parkingName}</strong><br>${lot.address || ''}`);
       
       markers.push(marker);
       
       // Add to list
       parkingHTML += `
         <div class="parking-item">
-          <h3>${lot.name || 'Parking Lot'}</h3>
+          <h3>${parkingName}</h3>
           <p>${lot.address || 'No address provided'}</p>
           <div class="details">
             <p>Type: ${lot.type || 'Not specified'}</p>
