@@ -34,26 +34,35 @@
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
-      background-color: #ddd;
-      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
     
     .review {
       background-color: #f9f9f9;
       border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .review:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(59, 130, 246, 0.15);
     }
     
     .review-header {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     
     .review-author {
       font-weight: bold;
+      color: #333;
+      font-size: 1.1em;
     }
     
     .review-date {
@@ -61,61 +70,97 @@
       font-size: 0.9em;
     }
     
+    .review-location {
+      margin-bottom: 8px;
+      color: #1e3a8a;
+    }
+    
     .review-rating {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       color: #f8c123;
+      font-size: 1.2em;
     }
     
     .review-content {
-      line-height: 1.5;
+      line-height: 1.6;
+      color: #444;
     }
     
     .add-review-form {
-      background-color: #f0f0f0;
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 30px;
-      max-width: 800px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      padding: 30px;
       margin: 100px auto;
+      max-width: 800px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
     }
     
     .form-group {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       display: flex;
       flex-direction: column;
     }
     
     .form-group label {
       display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
     }
     
     .form-group input,
     .form-group textarea,
     .form-group select {
       width: 100%;
-      padding: 8px;
+      padding: 12px;
       border: 1px solid #ddd;
-      border-radius: 4px;
+      border-radius: 6px;
+      font-family: inherit;
+      transition: border-color 0.3s;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: #3b82f6;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
     
     .form-group textarea {
-      height: 100px;
+      height: 120px;
+      resize: vertical;
     }
     
     button.submit-review {
-      background-color: #4CAF50;
+      background-color: #3b82f6;
       color: white;
       border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
+      padding: 12px 24px;
+      border-radius: 6px;
       cursor: pointer;
       font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
     }
     
     button.submit-review:hover {
-      background-color: #45a049;
+      background-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+    
+    .reviews-heading {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1e3a8a;
+    }
+    
+    .reviews-intro {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #444;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -178,7 +223,8 @@
 
   <main>
     <div class="add-review-form">
-        <h3>Add Your Review</h3>
+        <h3 style="color: #1e3a8a; margin-bottom: 20px; text-align: center;">Share Your Parking Experience</h3>
+        <p style="margin-bottom: 25px; text-align: center; color: #555;">Your honest feedback helps other drivers find the best parking options. Please rate your recent experience and provide details that would be helpful to others.</p>
         <form id="review-form">
           <div class="form-group">
             <label for="parking-name">Parking Location</label>
@@ -189,34 +235,32 @@
           </div>
           <div class="form-group">
             <label for="reviewer-name">Your Name</label>
-            <input type="text" id="reviewer-name" required>
+            <input type="text" id="reviewer-name" placeholder="Enter your name" required>
           </div>
           <div class="form-group">
-            <label for="rating">Rating</label>
+            <label for="rating">Rate Your Experience</label>
             <select id="rating" required>
-              <option value="5">★★★★★ (5/5)</option>
-              <option value="4">★★★★☆ (4/5)</option>
-              <option value="3">★★★☆☆ (3/5)</option>
-              <option value="2">★★☆☆☆ (2/5)</option>
-              <option value="1">★☆☆☆☆ (1/5)</option>
+              <option value="5">★★★★★ (5/5) - Excellent</option>
+              <option value="4">★★★★☆ (4/5) - Very Good</option>
+              <option value="3">★★★☆☆ (3/5) - Average</option>
+              <option value="2">★★☆☆☆ (2/5) - Poor</option>
+              <option value="1">★☆☆☆☆ (1/5) - Terrible</option>
             </select>
           </div>
           <div class="form-group">
             <label for="review-text">Your Review</label>
-            <textarea id="review-text" required></textarea>
+            <textarea id="review-text" placeholder="Please share details about your experience (cleanliness, security, ease of access, payment process, etc.)" required></textarea>
           </div>
-          <button type="submit" class="submit-review">Submit Review</button>
+          <button type="submit" class="submit-review">Submit Your Review</button>
         </form>
       </div>
     <div class="reviews-container">
-      <h2>Parking Lot Reviews</h2>
-      <p>Read what others have to say about parking experiences or share your own review!</p>
+      <h2 class="reviews-heading">Parking Experience Reviews</h2>
+      <p class="reviews-intro">Discover what fellow drivers are saying about their parking experiences. Our community-driven reviews help you make informed decisions about where to park in the city. Each review provides insights about cleanliness, security, accessibility, and overall value for money.</p>
       
       <div id="reviews-list">
         <!-- Reviews will be loaded here -->
       </div>
-      
-      
     </div>
   </main>
 

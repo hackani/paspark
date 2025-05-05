@@ -24,7 +24,7 @@ const dummyReviews = [
     parkingName: "Central City Parking",
     reviewerName: "John Smith",
     rating: 4,
-    reviewText: "Great location and easy to find. The payment system was straightforward and the staff was helpful. Would use this parking lot again.",
+    reviewText: "This downtown parking garage is well-maintained and brightly lit, which made me feel secure even when returning to my car late at night. The payment system is modern and accepts contactless payments. The only downside is that spaces are somewhat tight for larger vehicles, but overall it's a reliable option in the heart of the city.",
     date: "2023-09-15"
   },
   {
@@ -32,7 +32,7 @@ const dummyReviews = [
     parkingName: "Downtown Plaza Parking",
     reviewerName: "Emily Johnson",
     rating: 5,
-    reviewText: "Perfect downtown parking option! Very clean and well-maintained. The security was visible and I felt safe leaving my car here overnight.",
+    reviewText: "I can't recommend Downtown Plaza Parking enough! The attendants are professional and helpful, the facility is immaculately clean, and they have security personnel visible throughout. I particularly appreciate the well-marked pedestrian walkways and the covered connection to the main shopping center, which is perfect during bad weather. Worth every penny for the convenience and peace of mind.",
     date: "2023-10-02"
   },
   {
@@ -40,7 +40,7 @@ const dummyReviews = [
     parkingName: "Riverfront Parking Garage",
     reviewerName: "Michael Brown",
     rating: 3,
-    reviewText: "Average parking experience. Spaces are a bit tight and it gets full quickly during peak hours. The location is convenient though.",
+    reviewText: "Riverfront has a fantastic location near all the waterfront attractions, which is its main selling point. However, the facility itself needs some updating. The payment machines were slow, and one was out of order during my visit. Spaces are adequate size but the layout is confusing - better signage would help. It gets very busy on weekends, so arrive early if you need a spot.",
     date: "2023-10-12"
   },
   {
@@ -48,7 +48,7 @@ const dummyReviews = [
     parkingName: "Metro Park & Ride",
     reviewerName: "Sarah Wilson",
     rating: 2,
-    reviewText: "Disappointed with this parking lot. Poor lighting and the payment machine was out of order. Had to walk quite far to my destination.",
+    reviewText: "I used this park and ride facility for a week while my regular garage was under renovation. The price is reasonable, but the conditions left much to be desired. Poor lighting in several sections made me uncomfortable when leaving work after dark. The shuttle service to downtown was inconsistent, sometimes making me late for work. Would only use again if absolutely necessary.",
     date: "2023-10-18"
   },
   {
@@ -56,8 +56,24 @@ const dummyReviews = [
     parkingName: "Convention Center Garage",
     reviewerName: "David Lee",
     rating: 5,
-    reviewText: "Excellent parking facility! Spacious spots and very convenient for attending events at the convention center. Will definitely park here again.",
+    reviewText: "Perfect parking option for convention attendees! I was impressed by how efficiently they handled the large volume of cars during a major event. Despite being at capacity, entering and exiting was smooth thanks to their multiple entry/exit points and well-trained staff. The reserved section for pre-booked spaces worked flawlessly. The EV charging stations were a nice bonus for my Tesla.",
     date: "2023-10-25"
+  },
+  {
+    id: 6,
+    parkingName: "Eastside Public Parking",
+    reviewerName: "Jennifer Martinez",
+    rating: 4,
+    reviewText: "Eastside Public Parking offers great value in an otherwise expensive part of town. I appreciate the hourly rates and the option to extend parking through their mobile app. The facility is well-maintained with wide spaces that accommodate SUVs comfortably. The location is convenient to restaurants and shops. Only reason for not giving 5 stars is the somewhat slow exit process during peak hours.",
+    date: "2023-11-05"
+  },
+  {
+    id: 7,
+    parkingName: "Harbor View Parking",
+    reviewerName: "Robert Johnson",
+    rating: 3,
+    reviewText: "Harbor View has an unbeatable location for waterfront events, but their pricing feels excessive, especially during special events when rates nearly double. The garage itself is clean and secure with good lighting. The automated payment system is efficient, but they should consider adding more machines to handle busy periods. Spaces are tight, making it challenging for larger vehicles.",
+    date: "2023-11-15"
   }
 ];
 
